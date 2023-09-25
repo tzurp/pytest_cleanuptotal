@@ -1,0 +1,7 @@
+assets/
+__pycache__/
+report.html
+*.egg-info/
+dist/
+
+

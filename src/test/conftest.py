@@ -1,0 +1,1 @@
+from pytest_cleanuptotal.cleanuptotal import cleanuptotal
