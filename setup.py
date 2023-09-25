@@ -10,7 +10,7 @@ setup(
     maintainer='Tzur Paldi',
     maintainer_email='tzur.paldi@outlook.com',
     license='GNU',
-    url='',
+    url='https://github.com/tzurp/pytest_cleanuptotal',
     description='A cleanup plugin for pytest',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
