@@ -24,8 +24,6 @@ class Cleanup:
         errors = []
         if len(self._cleanupList) == 0:
             return
-        # TODO remove print
-        print("### Cleanup initialized ###")
 
         self._cleanupList.reverse()
         
@@ -45,6 +43,5 @@ class Cleanup:
             
 
         self._cleanupList = []
-        # TODO remove print
-        print(f"pytest-cleanuptotal-cleanup: ### Cleanup done ###)")
+        
         
