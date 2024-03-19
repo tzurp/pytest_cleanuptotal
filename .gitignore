@@ -1,7 +1,9 @@
 assets/
 __pycache__/
+dist/
+build/
 report.html
 *.egg-info/
-dist/
+
 
 
