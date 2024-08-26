@@ -16,7 +16,7 @@ To use pytest-cleanuptotal, simply add the **cleanuptotal** fixture to the test 
 def test_should_keep_things_tidy(cleanuptotal):
             # ...
 
-            accountId = create_account("John Blow");
+            account_id = create_account("John Blow");
             amount = 1000000
             
             # usage of cleanuptotal with lambda function:
