@@ -16,30 +16,30 @@ To use pytest-cleanuptotal, simply add the **cleanuptotal** fixture to the test 
 def test_should_keep_things_tidy(cleanuptotal):
             # ...
 
-            accountId = createAccount("John Blow");
+            accountId = create_account("John Blow");
             amount = 1000000
             
             # usage of cleanuptotal with lambda function:
-            cleanuptotal.addCleanup(lambda: deleteAccount(accountId))
+            cleanuptotal.add_cleanup(lambda: delete_account(account_id))
 
-            addInvestmentPlan(accountId, "ModRisk");
+            add_investment_plan(account_id, "ModRisk");
 
-            cleanuptotal.addCleanup(lambda: removeInvestmentPlan(accountId))
+            cleanuptotal.add_cleanup(lambda: remove_investment_plan(account_id))
             
-            deposit(accountId, amount);
+            deposit(account_id, amount);
 
-            def removeDeposit():
+            def remove_deposit():
               url = f"https://api.example.com/user/{accountId}/withdraw"
               data = {"amount": amount}
               response = requests.post(url, json=data)
             
             # usage of cleanuptotal with regular function:
-            cleanuptotal.addCleanup(removeDeposit)
+            cleanuptotal.add_cleanup(remove_deposit)
 
             # ...
 
         # Please note that the actual execution of the cleanup code would take palce AFTER test completion.
-        # Execution order in cleanuptotal would be removeDeposit() -> removeInvestmentPlan(accountId) -> deleteAccount(accountId).
+        # Execution order in cleanuptotal would be remove_deposit() -> remove_investment_plan(account_id) -> delete_account(account_id).
 ```
 
 To use type hints follow this example:
