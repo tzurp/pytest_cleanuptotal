@@ -1,12 +1,12 @@
-from setuptools import setup
+from setuptools import find_packages, setup
 
 with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setup(
     name='pytest-cleanuptotal',
-    packages=['pytest_cleanuptotal'],
-    package_dir={'pytest_cleanuptotal': 'src/pytest_cleanuptotal'},
+    packages=find_packages(where='src', exclude=['*tests*']),
+    package_dir={'': 'src'},
     version='0.3.0',
     author='Tzur Paldi',
     author_email='tzur.paldi@outlook.com',
