@@ -1,9 +1,9 @@
+from typing import Generator
 import pytest
-
-from .cleanup import Cleanup
+from pytest_cleanuptotal.cleanup import Cleanup
 
 @pytest.fixture
-def cleanuptotal() -> Cleanup:
+def cleanuptotal() -> Generator[Cleanup, None, None]:
     cleanup = Cleanup()
     yield cleanup
     cleanup.finalize()

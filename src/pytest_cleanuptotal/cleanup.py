@@ -1,11 +1,13 @@
 import traceback
 from typing import Callable
+from helpers.logger import Logger
 
 class Cleanup:
     _cleanupList = []
     """This field is private, please don't change it.
     """
-    
+    logger = Logger()
+
     def __init__(self):
         self._cleanupList = []
         
@@ -30,16 +32,17 @@ class Cleanup:
         for cleanup_function in self._cleanupList:
             try:
                 cleanup_function()
+                self.logger.debug(f"pytest-cleanuptotal[😊]: Successfully executed '{cleanup_function}'")
             except Exception as err:
                 message = f"pytest-cleanuptotal[😕]: Failed to execute '{cleanup_function}': {err.args[0]}, ${traceback.format_exc()}"
                 errors.append(message)
             
 
         if len(errors) > 0:
-            print(f"pytest-cleanuptotal: Warning!!!: Cleanup finished with {len(errors)} error(s):")
+            self.logger.error(f"pytest-cleanuptotal: Warning!!!: Cleanup finished with {len(errors)} error(s):")
 
             for run_error in errors:
-                print(run_error)
+                self.logger.error(run_error)
             
 
         self._cleanupList = []
