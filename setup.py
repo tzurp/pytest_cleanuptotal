@@ -7,7 +7,7 @@ setup(
     name='pytest-cleanuptotal',
     packages=['pytest_cleanuptotal'],
     package_dir={'pytest_cleanuptotal': 'src/pytest_cleanuptotal'},
-    version='0.2.2',
+    version='0.3.0',
     author='Tzur Paldi',
     author_email='tzur.paldi@outlook.com',
     maintainer='Tzur Paldi',
