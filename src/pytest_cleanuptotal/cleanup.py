@@ -1,3 +1,4 @@
+import inspect
 import traceback
 from typing import Callable
 from helpers.logger import Logger
@@ -32,7 +33,8 @@ class Cleanup:
         for cleanup_function in self._cleanupList:
             try:
                 cleanup_function()
-                self.logger.debug(f"pytest-cleanuptotal[😊]: Successfully executed '{cleanup_function}'")
+                source = inspect.getsource(cleanup_function)
+                self.logger.debug(f"pytest-cleanuptotal[😊]: Successfully executed '{source}'")
             except Exception as err:
                 message = f"pytest-cleanuptotal[😕]: Failed to execute '{cleanup_function}': {err.args[0]}, ${traceback.format_exc()}"
                 errors.append(message)
