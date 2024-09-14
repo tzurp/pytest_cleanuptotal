@@ -51,6 +51,10 @@ def test_should_keep_things_tidy(cleanuptotal:Cleanup):
             # ... your test code here
 ```
 
+## Logging
+
+To see all the *pytest-cleanuptotal* logging change the log level to 'DEBUG' (e.g., in your project's pytest.ini)
+
 ## Support
 
 For any questions or suggestions contact me at: [tzur.paldi@outlook.com](mailto:tzur.paldi@outlook.com?subjet=pytest-cleanuptotal%20Support)
