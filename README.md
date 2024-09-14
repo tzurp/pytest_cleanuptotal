@@ -4,7 +4,7 @@ This plugin for [pytest](https://github.com/pytest-dev/pytest) and for [playwrig
 
 ## Installation
 
-```no-highlight
+```
 $ pip install pytest-cleanuptotal
 ```
 
@@ -12,7 +12,7 @@ $ pip install pytest-cleanuptotal
 
 To use pytest-cleanuptotal, simply add the **cleanuptotal** fixture to the test method. This will include the cleanup functionality in your test. No further setup is required. Here's an example:
 
-```no-highlight
+```python
 def test_should_keep_things_tidy(cleanuptotal):
             # ...
 
@@ -44,7 +44,7 @@ def test_should_keep_things_tidy(cleanuptotal):
 
 To use type hints follow this example:
 
-```no-highlight
+```python
 from pytest_cleanuptotal.cleanup import Cleanup
 
 def test_should_keep_things_tidy(cleanuptotal:Cleanup):
