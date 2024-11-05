@@ -41,10 +41,10 @@ class Cleanup:
             
 
         if len(errors) > 0:
-            self.logger.error(f"pytest-cleanuptotal: Warning!!!: Cleanup finished with {len(errors)} error(s):")
+            self.logger.info(f"pytest-cleanuptotal: Warning!!!: Cleanup finished with {len(errors)} error(s):")
 
             for run_error in errors:
-                self.logger.error(run_error)
+                self.logger.info(run_error)
             
 
         self._cleanupList = []
