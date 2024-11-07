@@ -36,15 +36,19 @@ class Cleanup:
                 source = inspect.getsource(cleanup_function)
                 self.logger.debug(f"pytest-cleanuptotal[😊]: Successfully executed '{source}'")
             except Exception as err:
-                message = f"pytest-cleanuptotal[😕]: Failed to execute '{cleanup_function}': {err.args[0]}, ${traceback.format_exc()}"
+                if err.args and err.args[0]:
+                    errargs = err.args[0]
+                else:
+                    errargs = ''
+                message = f"pytest-cleanuptotal[😕]: Failed to execute '{cleanup_function}': {errargs}, ${traceback.format_exc()}"
                 errors.append(message)
             
 
         if len(errors) > 0:
-            self.logger.info(f"pytest-cleanuptotal: Warning!!!: Cleanup finished with {len(errors)} error(s):")
+            self.logger.error(f"pytest-cleanuptotal: Warning!!!: Cleanup finished with {len(errors)} error(s):")
 
             for run_error in errors:
-                self.logger.info(run_error)
+                self.logger.error(run_error)
             
 
         self._cleanupList = []
