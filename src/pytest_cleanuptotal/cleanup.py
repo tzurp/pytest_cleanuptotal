@@ -36,11 +36,7 @@ class Cleanup:
                 cleanup_function()
                 self.logger.debug(f"pytest-cleanuptotal[😊]: Successfully executed '{source}' ({cleanup_function})")
             except Exception as err:
-                if err.args and err.args[0]:
-                    errargs = err.args[0]
-                else:
-                    errargs = ''
-                message = f"pytest-cleanuptotal[😕]: Failed to execute '{source}' ({cleanup_function}): {errargs}, ${traceback.format_exc()}"
+                message = f"pytest-cleanuptotal[😕]: Failed to execute '{source}' ({cleanup_function}): {err}, ${traceback.format_exc()}"
                 errors.append(message)
             
 

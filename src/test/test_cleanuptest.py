@@ -9,7 +9,6 @@ def test_fail(cleanuptotal: Cleanup):
     print("after-cleanup error stage 2")
   
   cleanuptotal.add_cleanup(cleanup_function)
-    
 
   cleanuptotal.add_cleanup(lambda: print("cleanup error stage 3"))
 
