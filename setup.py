@@ -7,9 +7,21 @@ setup(
     name='pytest-cleanuptotal',
     packages=find_packages(where='src', exclude=['*tests*']),
     package_dir={'': 'src'},
-    version='0.3.6',
+    version='0.3.7',
     author='Tzur Paldi',
     author_email='tzur.paldi@outlook.com',
+    license="Apache-2.0",
+    url="https://github.com/tzurp/pytest_cleanuptotal",
+    project_urls={
+        "Bug Tracker": "https://github.com/tzurp/pytest_cleanuptotal/issues",
+        "Documentation": "https://github.com/tzurp/pytest_cleanuptotal#readme",
+        "Source Code": "https://github.com/tzurp/pytest_cleanuptotal"
+    },
+    classifiers=[
+        "License :: OSI Approved :: Apache Software License",
+        # You can add other classifiers like OS, Python version, etc.
+    ],
+    license_files=["LICENSE"]
     maintainer='Tzur Paldi',
     maintainer_email='tzur.paldi@outlook.com',
     license='MIT',
