@@ -58,3 +58,5 @@ To see all the *pytest-cleanuptotal* logging change the log level to 'DEBUG' (e.
 ## Support
 
 For any questions or suggestions contact me at: [tzur.paldi@outlook.com](mailto:tzur.paldi@outlook.com?subjet=pytest-cleanuptotal%20Support)
+
+📬 Maintained by [Tzur Paldi](https://github.com/tzurp) — explore my GitHub profile for more tools.
